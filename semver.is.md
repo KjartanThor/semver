@@ -4,7 +4,7 @@ Merkingartengd útgáfunúmer 2.0.0
 Samantekt
 ---------
 
-Með útgáfunúmer MAJOR.MINOR.PATCH, , hækkið:
+Með útgáfunúmer MAJOR.MINOR.PATCH, hækkar:
 
 1. MAJOR útgáfu þegar þú gerir ósamhæfðar viðmóts breytingar,
 1. MINOR útgáfu þegar þú bætir virkni við á afturhæfan máta, og
@@ -20,13 +20,13 @@ Inngangur
 sem kerfið verður og því fleiri pakkar sem eru samþættir við hugbúnaðinn, því 
 líklegra er að þú upplifir þig, dag einn, í þessum pitti vonleysis.
 
-Í kerfum með mörgum ákvæðum getur framleiðsla á nýrri útgáfu pakka fljótt orðið
+Í kerfum með mörgum ákvæðum getur framleiðsla á nýrri útgáfum pakka fljótt orðið
 eins og martröð. Ef ákvæðisskilgreiningarnar eru of þröngar, er hætta á að
-útgáfu læsingu (í þeirri stöðu er ómögulegt að uppfæra pakka án þess að gefa
+útgáfulæsingu (í þeirri stöðu er ómögulegt að uppfæra pakka án þess að gefa
 út nýjar útgáfur af öllum ákvæðispökkum). Ef ákvæði eru of lauslega skilgreind, 
-kemur óhjákvæmilega að útgáfu fjölveri (samhæfni talin vera við fleiri framtíðar
-útgáfur en er raunhæft). Ákvæðisvíti er þegar útgáfu fjölveri og /eða útgáfu 
-læsing hindra auðvelda og örugga framþróun verkefnis.
+kemur óhjákvæmilega að útgáfufjölveri (samhæfni talin vera við fleiri framtíðar
+útgáfur en er raunhæft). Ákvæðisvíti er þegar útgáfu fjölveri og /eða 
+útgáfulæsing hindra auðvelda og örugga framþróun verkefnis.
 
 Til að leysa þetta vandamál eru lagðar til reglur og kröfur sem stýra því 
 hvernig útgáfunúmer eru ákvörðuð og þeim breytt. Þessar reglur eru byggðar á 
@@ -34,15 +34,15 @@ hvernig útgáfunúmer eru ákvörðuð og þeim breytt. Þessar reglur eru bygg
 takmarkast ekki nauðsynlega af þeim. Til þess að kerfið virki, þarf fyrst að 
 skilgreina notfrjáls forritunarskil. Skilgreiningin getur verið í skjölun eða 
 framfylgt í kódanum. Óháð skilgreiningu er mikilvægt að forritunarskilin sé 
-nákvæm og skýr. Þegar notfrjáls foritunarskil hafa verið skilgreind, eru 
+nákvæm og skýr. Þegar notfrjáls forritunarskil hafa verið skilgreind, eru 
 breytingar á þeim gefnar til kynna með ákveðnum hækkunum á útgáfunúmerum.
 Skoðum útgáfu sniðið X.Y.Z (Major.Minor.Patch). Villuleiðréttingar sem ekki 
 breyta forritunarskilunum hækka patch hlutann, afturhæfar breytingar og viðbætur
-á forritunarskilunum hækka minur hlutann og óafturhæfar breytingar á 
+á forritunarskilunum hækka minor hlutann og óafturhæfar breytingar á 
 forritunarskilum hækka major hlutann.
 
 Þetta kerfi er kallað "merkingartengd útgáfunúmer." Með þessari aðferð gefa 
-útgáfunúmer og hvernig þau breytast merkingu um kódann og hvernig hann hefur 
+útgáfunúmer og hvernig þau breytast til kynna hvernig kódinn hefur 
 breyst frá einni útgáfu til annarrar.
 
 
@@ -74,7 +74,7 @@ hækkar eftir þessa útgáfu er háð þessum notfrjálsu forritunarskilum og h
 þau breytast.
 
 1. Patch útgáfan Z (x.y.Z | x > 0) VERÐUR að hækka ef eingöngu afturhæfum
-villuleiðréttingum hefur verið bætti við. Villuleiðrétting er skilgreind sem
+villuleiðréttingum hefur verið bætt við. Villuleiðrétting er skilgreind sem
 innvær breyting sem lagfærir ranga hegðun.
 
 1. Minor útgáfan Y (x.Y.z | x > 0) VERÐUR að hækka ef nýrri, afturhæfri virkni
@@ -85,11 +85,11 @@ innifalið breytingar á patch stigi. Patch útgáfuna VERÐUR að setja aftur �
 þegar minor útgáfan er hækkuð.
 
 1. Major útgáfan X (X.y.z | X > 0) VERÐUR að hækka ef einhverri óafturhæfri virkni
-er bætt í notfrjálsa forritunarviðmótið. Það GÆTUR einnig innifalið breytingar á 
+er bætt í notfrjálsa forritunarviðmótið. Það GETUR einnig innifalið breytingar á 
 minor og patch stigi. Patch og minor útgáfur VERÐUR að setja aftur á 0 þegar 
 major útgáfa er hækkuð.
 
-1. Forútgáfu má táknuð með því að skeyta bandstriki og röð einkenna aðgreind 
+1. Forútgáfu má tákna með því að skeyta bandstriki og röð einkenna aðgreind 
 með punkti strax á eftir patch útgáfunni. Einkenni VERÐA að vera samsett 
 eingöngu með ASCII bók- og tölustöfum ásamt bandstriki [0-9A-Za-z-]. Einkenni 
 MEGA EKKI vera tóm. Töluleg einkenni MEGA EKKI innihalda leiðandi núll. 
@@ -101,15 +101,15 @@ eru til samsvarandi hefðbundinnar útgáfu. Dæmi: 1.0.0-alpha, 1.0.0-alpha.1,
 1. Lýsigögn úr smíði MÁ merkja með því að skeyta við plús merki og röð einkenna
 aðgreindum með punkti strax á eftir patch eða forútgáfunúmeri. Einkenni VERÐA að
 vera samsett með ASCII bók- og tölustöfum og bandstriki [0-9A-Za-z-]. Einkenni
-MEGA EKKI vera tóm. Lýsigögn smíði VERÐUR að hunsa þegar röð útgáfunúmera er
-ákvörðuð. Þannig verða tvær útgáfu sem eingöngu munar á lýsigögnum smíði með 
+MEGA EKKI vera tóm. Lýsigögn úr smíði VERÐUR að hunsa þegar röð útgáfunúmera er
+ákvörðuð. Þannig verða tvær útgáfur sem eingöngu munar á lýsigögnum úr smíði með 
 sama forgang. Dæmi: 1.0.0-alpha+001, 1.0.0+20130313144700, 
 1.0.0-beta+exp.sha.5114f85
 
 1. Forgangur vísar til þess hvernig útgáfur eru bornar saman við hverja aðra 
 þegar þeim er raðað. Forgangur VERÐUR að vera reiknaður með því að slíta sundur
 útgáfunúmerið í major, minor, patch og forútgáfu einkenni í þeirri röð (lýsigögn
-smíði hafa engin áhrif á forgang). Forgangur er ákvarðaður út frá fyrsta mismuni
+úr smíði hafa engin áhrif á forgang). Forgangur er ákvarðaður út frá fyrsta mismun
 sem finnst við samanburð þessara einkenna frá vinstri til hægri eins og hér á
 eftir: major, minor og patch útgáfur eru alltaf bornar saman sem heiltölur. 
 Dæmi: 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1. Þegar major, minor og patch eru jöfn hefur
@@ -189,11 +189,11 @@ Backus–Naur mállýsing fyrir gild SemVer útgáfunúmer
                | "y" | "z"
 
 
-Afhverju að nota merkingartengd útgáfunúmer?
---------------------------------------------
+Af hverju að nota merkingartengd útgáfunúmer?
+---------------------------------------------
 
 Þetta er ekki ný eða byltingarkennd hugmynd. Í raun eru mestar líkur á að þú
-gerir eitthvað í líkingu við þetta þegar. Vandinn er að "í líkingu" er ekki 
+gerir eitthvað í líkingu við þetta nú þegar. Vandinn er að "í líkingu" er ekki 
 nægilega gott. Ef ekki er farið eftir formlegri skilgreiningu eru útgáfunúmer
 ónothæf við umsýslu ákvæða. Með því að gefa hugmyndunum að ofan nafn og skýra
 skilgreiningu verður auðveldara að gefa notendum hugbúnaðarins tilætlanir þínar
@@ -201,15 +201,15 @@ til kynna. Þegar tilætlanir eru skýrar, sveigjanlegar (en ekki of sveigjanleg
 er loksins hægt að skilgreina ákvæði.
 
 Með einföldu dæmi er hægt að sýna fram á hvernig ákvæðisvíti tilheyra sögunni 
-með notkun merkingartengdra útgáfunúmera. Tökum dæmi af safni með nafið 
+með notkun merkingartengdra útgáfunúmera. Tökum dæmi af safni með nafnið 
 "Brunabíll." Safnið þarfnast pakka með merkingartengdu útgáfunúmeri sem heitir
 "Stigi." Þegar Brunabíll er búinn til er Stigi í útgáfunni 3.1.0. Þar sem 
 Brunabíll notar virkni sem var bætt við í útgáfu 3.1.0 er óhætt að skilgreina 
 ákvæðið á Stiga sem stærra eða jafnt og 3.1.0 en lægra en 4.0.0. Þegar útgáfur
-3.1.1 og 3.2.0 af Stiga verða tiltækar er óhætt að bæta þeim í pakka umsýslukerfið
-án þess að hafa áhyggjur af að þeir séu ósamhæfðir við annan ákvæðis hugbúnað.
+3.1.1 og 3.2.0 af Stiga verða tiltækar er óhætt að bæta þeim í pakkaumsýslukerfið
+án þess að hafa áhyggjur af að þeir séu ósamhæfðir við annan ákvæðishugbúnað.
 
-Sem ábyrgur forritari þarftu, eðli málsins samkvæmt, að ganga úr skugga um að
+Sem ábyrgur forritari þarftu eðli málsins samkvæmt að ganga úr skugga um að
 uppfærslur pakka virki eins og gefið er til kynna. Veruleikinn er subbulegur,
 það er ekkert við því að gera annað en að vera á varðbergi. Það sem þú getur 
 gert er að nota merkingartengd útgáfunúmer til að fá skynsamlega leið til að
@@ -218,7 +218,7 @@ sýsla með og uppfæra pakka án þess að þurfa að gefa út nýjar útgáfur
 
 Ef þetta hljómar æskilegt, er allt sem þú þarft til að hefja notkun á 
 merkingartengdum útgáfunúmerum að lýsa því yfir og fylgja reglunum. Settu hlekk
-á þetta vefsvæði í README skránna svo aðrir þekki reglurnar og geti notið þeirra.
+á þetta vefsvæði í README skránna svo aðrir þekki reglurnar og þær gagnist þeim.
 
 
 Algengar spurningar
@@ -251,9 +251,9 @@ gefur út óafturhæfar breytingar þýðir að þú þarft að ígrunda vel hva
 breytingarnar koma til með að hafa og meta hlutfallið milli kostnaðar og kosta
 við breytingarnar.
 
-### Það er of mikið vinna að skjala allt notfrjálsa forritunarviðmótið!
+### Það er of mikil vinna að skjala allt notfrjálsa forritunarviðmótið!
 
-Það er á þína ábyrgð sem atvinnu forritari að skjala á fullnægjandi máta þann
+Það er á þína ábyrgð sem faglegur forritari að skjala á fullnægjandi máta þann
 hugbúnað sem ætlaður er til nota af öðrum. Stjórnun flækjustigs hugbúnaðar er 
 afar mikilvægur hluti af að halda verkefni skilvirku og það er afar erfitt ef
 enginn veit hvernig skal nota hugbúnaðinn þinn eða hvaða föll er óhætt að kalla í.
@@ -325,8 +325,8 @@ Ef þú vilt gefa endurgjöf, vinsamlegast [opna mál á GitHub]
 (https://github.com/mojombo/semver/issues).
 
 
-License
--------
+Leyfi
+-----
 
 Creative Commons - CC BY 3.0
 http://creativecommons.org/licenses/by/3.0/
